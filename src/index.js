@@ -221,7 +221,9 @@ const getHeaders = async (handlers, config, current, absolutePath, stats) => {
 			'Content-Disposition': contentDisposition(base, {
 				type: 'inline'
 			}),
-			'Accept-Ranges': 'bytes'
+			'Accept-Ranges': 'bytes',
+			// Allow cross-origin by default
+			'Access-Control-Allow-Origin': '*',
 		};
 
 		if (etag) {
